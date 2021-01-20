@@ -1,0 +1,78 @@
+<s-markdown>
+In pandas, Dataframes are data-structures like SQL tables. They have rows and columns.
+
+## Creating a Dataframe (df) - 1st method (column by column)
+
+```python
+my_df = pd.DataFrame({
+    'name': ['Mike', 'John', 'Julia'],
+    'gender': ['M', 'M', 'F'],
+    'age': ['10', '20', '15']
+})
+```
+
+A dataframe can contain int, floats, tuples, strings etc.
+
+Printing dataframe contents - 
+
+```python
+print(my_df)
+'''
+    name gender age
+0   Mike      M  10
+1   John      M  20
+2  Julia      F  15
+'''
+```
+
+## Creating a Dataframe - 2nd method (row by row)
+
+```python
+my_df = pd.DataFrame([
+	['Mike', 'M', 10],
+	['John', 'M', 20],
+	['Julia', 'F', 15]
+], columns = ['name', 'gender', 'age'])
+
+print(my_df)
+'''
+    name gender  age
+0   Mike      M   10
+1   John      M   20
+2  Julia      F   15
+'''
+```
+
+You can also print `n` top rows for a dataframe, using the `head(..)` method -
+
+```python
+print(my_df.head(2)) # Print top two rows
+
+'''
+    name gender  age
+0   Mike      M   10
+1   John      M   20
+'''
+```
+
+## Getting dataframe `info()`
+
+You can obtain general info about a dataframe using the `info()` method -
+
+```python
+print(my_df.info())
+'''
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 3 entries, 0 to 2
+Data columns (total 3 columns):
+ #   Column  Non-Null Count  Dtype 
+---  ------  --------------  ----- 
+ 0   name    3 non-null      object
+ 1   gender  3 non-null      object
+ 2   age     3 non-null      int64 
+dtypes: int64(1), object(2)
+memory usage: 200.0+ bytes
+None
+'''
+```
+</s-markdown>

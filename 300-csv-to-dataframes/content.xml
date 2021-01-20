@@ -1,0 +1,32 @@
+<s-markdown>
+Let's say you have a CSV file `my_file.csv`-
+
+```python
+name,gender,age
+'Mike','M',10
+'John','M',20
+'Julia','F',15
+```
+
+## 1. Reading `df` from CSV
+
+```python
+my_df = pd.read_csv('my_file.csv')
+print(my_df)
+'''
+    name gender  age
+0   Mike      M   10
+1   John      M   20
+2  Julia      F   15
+'''
+
+```
+
+## 2. Writing `df` to a CSV file
+
+```python
+my_df.to_csv('my_new_file.csv')
+```
+
+This will create a new file `my_new_file.csv` containing all the rows from `my_df`.
+</s-markdown>

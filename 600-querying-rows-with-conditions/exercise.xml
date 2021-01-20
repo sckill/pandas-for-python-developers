@@ -1,0 +1,16 @@
+<s-code>
+a = [1, 2, 3]
+b = ['x', 'y', 'z']
+
+c = <s-variable #v1></s-variable>
+# c is a zip object
+</s-code>
+
+<s-variables>
+{
+    "v1": {
+        "expected_value": "zip(a, b)"
+        "match_spaces": false
+    }
+}
+</s-variables>

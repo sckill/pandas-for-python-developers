@@ -1,0 +1,49 @@
+<s-markdown>
+Suppose you have a dataframe `my_df`-
+
+```python
+my_df = pd.DataFrame([
+	['Mike', 'M', 10],
+	['Nancy', 'F', 30],
+	['John', 'M', 20],
+	['Julia', 'F', 15]
+], columns = ['name', 'gender', 'age'])
+
+```
+
+How would you select all rows with gender == Female?
+
+```python
+new_df = my_df[my_df.gender == 'F']
+
+print(new_df)
+
+'''
+   name	gender	age
+1	Nancy	     F	 30
+3	Julia	     F	 15
+'''
+```
+
+Similarly, more conditions can be used -
+
+```python
+new_df = my_df[my_df.age >= 20]
+
+new_df = my_df[my_df.name != 'Julia']
+```
+
+Even more complicated conditions are supported, using `&` (and operator) and `|` (or operator) -
+
+```python
+new_df = my_df[(my_df.age >= 20) **&** (my_df.gender == 'F')] # AND
+
+new_df = my_df[(my_df.age >= 20) **|** (my_df.gender == 'F')] # OR
+```
+
+It gets even more sophisticated than that, with `isin` selector method -
+
+```python
+new_df = my_df[my_df.name.isin(['Jonh', 'Nancy'])]
+```
+</s-markdown>

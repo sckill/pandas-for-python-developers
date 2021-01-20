@@ -1,0 +1,37 @@
+{
+   "title": "Pandas For Python Programmers",
+   "lessons": [
+      {
+         "id": "100-introduction",
+         "title": "Introduction To Pandas"
+      },
+      {
+          "id": "200-pandas-dataframes",
+          "title": "Pandas Dataframes"
+      },
+      {
+          "id": "300-csv-to-dataframes",
+          "title": "CSV -> Dataframes"
+      },
+      {
+          "id": "400-selecting-dataframe-columns",
+          "title": "Selecting Dataframe Columns"
+      },
+      {
+          "id": "500-selecting-dataframe-rows",
+          "title": "Selecting Dataframe Rows"
+      },
+      {
+          "id": "600-querying-rows-with-conditions",
+          "title": "Querying Rows With Conditions"
+      },
+      {
+          "id": "700-querying-rows-with-lambda",
+          "title": "Querying Rows With Lambda"
+      },
+      {
+          "id": "800-resetting-indices",
+          "title": "Resetting Indices"
+      }
+   ]
+}

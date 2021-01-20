@@ -1,0 +1,64 @@
+<s-markdown>
+Let's say we query a dataframe -
+
+```python
+my_df = pd.DataFrame([
+	['Mike', 'M', 10],
+	['Nancy', 'F', 15],
+	['John', 'M', 5],
+	['Julia', 'F', 20]
+], columns = ['name', 'gender', 'age'])
+
+new_df = my_df[lambda x: x.age > 10]
+print(new_df)
+
+'''
+   name	gender	age
+1	Nancy	     F	15
+3	Julia	     F	20
+'''
+```
+
+You'll notice that the indices in selected rows are 1 and 3 above (which are same as the indices of the original dataframe). To reset the same, use the `reset_index()` method -
+
+```python
+df2 = new_df.**reset_index()**
+print(df2)
+
+'''
+   index   name gender  age
+0      1  Nancy      F   15
+1      3  Julia      F   20
+'''
+```
+
+## Dropping `index` column
+
+Note how the original indices are now moved to a new column `index`. If you don't need it, rather specify `drop=True` -
+
+```python
+df2 = new_df.reset_index(**drop=True**)
+print(df2)
+
+'''
+    name gender  age
+0  Nancy      F   15
+1  Julia      F   20
+'''
+```
+
+## In-place reset_index
+
+Also note that `reset_index(..)` returned a new dataframe `df2` instead of resetting index in the original `new_df`. We can specify `inplace=True` just for the same reason -
+
+```python
+new_df.reset_index(drop=True, **inplace=True**)
+print(new_df)
+
+'''
+    name gender  age
+0  Nancy      F   15
+1  Julia      F   20
+'''
+```
+</s-markdown>

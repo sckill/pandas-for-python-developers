@@ -1,0 +1,65 @@
+<s-markdown>
+Suppose you have a dataframe `my_df`-
+
+```python
+my_df = pd.DataFrame([
+	['Mike', 'M', 10],
+	['John', 'M', 20],
+	['Julia', 'F', 15]
+], columns = ['name', 'gender', 'age'])
+
+```
+
+Dataframe columns are be accessed just like elements of a list -
+
+```python
+print(my_df['name'])
+
+'''
+0     Mike
+1     John
+2    Julia
+Name: name, dtype: object
+'''
+```
+
+Note the type of the selected column, it's not `Dataframe` type, but `Series` type -
+
+```python
+# Columns are of `Series` type
+print(type(my_df['name']))
+# <class 'pandas.core.series.Series'>
+
+# Dataframes themselves are of `Dataframe` type
+print(type(my_df))
+# <class 'pandas.core.frame.DataFrame'>
+```
+
+Another way to access a single column is using the `.` operator -
+
+```python
+print(my_df.name)
+'''
+0     Mike
+1     John
+2    Julia
+Name: name, dtype: object
+'''
+```
+
+Of course this won't work, if the column name has spaces or special characters.
+
+## Selecting multiple columns
+
+You can pass a list of column names -
+
+```python
+print(my_df[['name', 'age']])
+'''
+name  age
+0   Mike   10
+1   John   20
+2  Julia   15
+'''
+```
+</s-markdown>

@@ -1,0 +1,7 @@
+<s-markdown>
+Importing pandas library -
+
+```python
+import pandas as pd
+```
+</s-markdown>

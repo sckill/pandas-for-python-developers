@@ -1,0 +1,25 @@
+<s-markdown>
+```python
+my_df = pd.DataFrame([
+	['Mike', 'M', 10],
+	['Nancy', 'F', 15],
+	['John', 'M', 5],
+	['Julia', 'F', 20]
+], columns = ['name', 'gender', 'age'])
+
+```
+
+Python's lambda functions give us unlimited flexibility in querying pandas dataframes - 
+
+```python
+new_df = my_df[lambda x: x.age > 10]
+
+print(new_df)
+
+'''
+   name	gender	age
+1	Nancy	     F	15
+3	Julia	     F	20
+'''
+```
+</s-markdown>
